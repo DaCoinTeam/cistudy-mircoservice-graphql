@@ -23,11 +23,11 @@ import { ConfigModule } from "@nestjs/config"
             password: databaseConfig().mysql.password,
             database: databaseConfig().mysql.schema,
             autoLoadEntities: true,
-            synchronize: true
+            synchronize: true,
         }),
         GraphQLModule.forRoot<ApolloFederationDriverConfig>({
             driver: ApolloFederationDriver,
-            typePaths: ["schema.gql"],
+            typePaths: ["./**/*.gql"],
             playground: true,
             plugins: [ApolloServerPluginInlineTrace()],
             buildSchemaOptions: {

@@ -11,8 +11,8 @@ ARG NODE_VERSION=20.10.0
 FROM node:${NODE_VERSION}-alpine as base
 
 # Set working directory for all build stages.
-WORKDIR /usr/src/app
-
+RUN mkdir -p /usr/src/cistudy-service-graphql
+WORKDIR /usr/src/cistudy-service-graphql
 
 ################################################################################
 # Create a stage for installing production dependecies.
@@ -51,20 +51,22 @@ FROM base as final
 # Use production node environment by default.
 ENV NODE_ENV production
 
-# Run the application as a non-root user.
-USER node
-
 # Copy package.json so that package manager commands can be used.
 COPY package.json .
 
 # Copy the production dependencies from the deps stage and also
 # the built application from the build stage into the image.
-COPY --from=deps /usr/src/app/node_modules ./node_modules
-COPY --from=build /usr/src/app/cistudy-microservice-graphql ./cistudy-microservice-graphql
+COPY --from=deps /usr/src/cistudy-service-graphql/node_modules ./node_modules
+COPY --from=build /usr/src/cistudy-service-graphql/dist ./dist
 
+# # allow node to read write ./dist
+RUN chown -R node:node ./dist
+
+# Run the application as a non-root user.
+USER node 
 
 # Expose the port that the application listens on.
-EXPOSE 1754
+EXPOSE 1804
 
 # Run the application.
-CMD npm start
+CMD npm run start:prod

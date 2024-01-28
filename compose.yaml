@@ -13,9 +13,14 @@ services:
       context: .
     environment:
       NODE_ENV: production
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: 123456
+      MYSQL_SCHEMA: cistudy
+      MYSQL_HOST: host.docker.internal
+      MYSQL_PORT: 3306
     ports:
-      - 1754:1754
-
+      - 1804:1804
+  
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
 # start the database before your application. The `db-data` volume persists the
@@ -49,3 +54,5 @@ services:
 #   db-password:
 #     file: db/password.txt
 
+
+#  docker run -p 3307:3306 --name mysql -e MYSQL_HOST=localhost -e MYSQL_PORT=3306 -e MYSQL_PASSWORD=123456 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest mysqld --default-authentication-plugin=mysql_native_password --max-connections=5

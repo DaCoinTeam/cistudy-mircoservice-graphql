@@ -18,7 +18,10 @@ const generateSchema = async () => {
         PostResolvers,
     ])
     await fsPromises.writeFile(
-        join(process.cwd(), "schema.gql"),
+        join(
+            process.cwd(),
+            `${process.env.NODE_ENV === "production" ? "dist" : "src"}/schema.gql`,
+        ),
         printSchema(schema),
     )
 }

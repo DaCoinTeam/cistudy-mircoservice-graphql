@@ -5,7 +5,7 @@ import {
 } from "@nestjs/apollo"
 import { GraphQLModule } from "@nestjs/graphql"
 import { ApolloServerPluginInlineTrace } from "@apollo/server/plugin/inlineTrace"
-import { CourseModule, PostModule } from "@features"
+import { ResolversModule } from "@resolvers"
 import { databaseConfig, jwtConfig } from "@config"
 import { TypeOrmModule } from "@nestjs/typeorm"
 import { ConfigModule } from "@nestjs/config"
@@ -35,8 +35,7 @@ import { ConfigModule } from "@nestjs/config"
             },
         }),
 
-        CourseModule,
-        PostModule,
+        ResolversModule
     ],
 
     controllers: [],

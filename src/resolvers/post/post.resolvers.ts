@@ -1,6 +1,6 @@
 import { Resolver, Query, Args } from "@nestjs/graphql"
-import { FindManyPostInput, FindOnePostInput } from "./inputs"
-import { PostModel } from "@shared"
+import { FindManyPostsInput, FindOnePostInput } from "./shared"
+import { PostModel } from "@common"
 import PostService from "./post.service"
 
 @Resolver(() => PostModel)
@@ -14,7 +14,7 @@ export default class PostResolvers {
     }
 
   @Query(() => [PostModel])
-  async findManyPosts(@Args("input") args: FindManyPostInput) {
+  async findManyPosts(@Args("input") args: FindManyPostsInput) {
       return this.postService.findManyPosts(args)
   }
 }

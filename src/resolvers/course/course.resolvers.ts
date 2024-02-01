@@ -1,6 +1,6 @@
 import { Resolver, Query, Args } from "@nestjs/graphql"
-import { FindOneCourseInput, FindManyCoursesInput } from "./inputs"
-import { CourseModel } from "@shared"
+import { FindOneCourseInput, FindManyCoursesInput } from "./shared/inputs"
+import { CourseModel } from "@common"
 import CourseService from "./course.service"
 
 @Resolver(() => CourseModel)

@@ -20,8 +20,8 @@
     "paths": {
       "@config": ["src/config"],
       "@database": ["src/database"],
-      "@features": ["src/features"],
-      "@shared": ["src/shared"]
+      "@resolvers": ["src/resolvers"],
+      "@common": ["src/common"]
     },
   },
 }

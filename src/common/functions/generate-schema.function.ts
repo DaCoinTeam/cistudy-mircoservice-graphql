@@ -1,4 +1,4 @@
-import { CourseResolvers, PostResolvers } from "@features"
+import { CourseResolvers, PostResolvers } from "@resolvers"
 import { NestFactory } from "@nestjs/core"
 import {
     GraphQLSchemaBuilderModule,

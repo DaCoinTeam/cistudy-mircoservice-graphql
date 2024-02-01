@@ -2,7 +2,7 @@ import { PostMySqlEntity } from "@database"
 import { Injectable } from "@nestjs/common"
 import { InjectRepository } from "@nestjs/typeorm"
 import { Repository } from "typeorm"
-import { FindManyPostInput, FindOnePostInput } from "./inputs"
+import { FindManyPostsInput, FindOnePostInput } from "./shared"
 
 @Injectable()
 export default class PostService {
@@ -15,7 +15,7 @@ export default class PostService {
         return await this.postMySqlRepository.findOneBy(args)
     }
 
-    async findManyPosts(args: FindManyPostInput): Promise<PostMySqlEntity[]> {
+    async findManyPosts(args: FindManyPostsInput): Promise<PostMySqlEntity[]> {
         const founds = await this.postMySqlRepository.findAndCount({
             where: {
                 courseId: args.courseId,

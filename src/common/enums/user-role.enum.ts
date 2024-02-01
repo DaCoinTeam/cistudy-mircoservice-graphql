@@ -5,9 +5,9 @@ enum UserRole {
   Moderator = "Moderator",
   Administrator = "Administrator",
 }
-export default UserRole
 
-//for graphql
 registerEnumType(UserRole, {
     name: "UserRole",
 })
+
+export default UserRole

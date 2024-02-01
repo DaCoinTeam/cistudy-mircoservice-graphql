@@ -52,14 +52,14 @@ enum UserKind {
 type CourseModel {
   courseId: ID!
   title: String!
-  thumbnailUrl: String
+  thumbnailId: String
   description: String!
   price: Float!
   verifiedStatus: VerifiedStatus
   isDraft: Boolean!
   creator: UserModel!
   isDeleted: Boolean!
-  previewVideoUrl: String
+  previewVideoId: String
   targets: String
   includes: String
 }

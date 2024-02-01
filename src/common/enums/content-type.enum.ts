@@ -9,9 +9,9 @@ enum ContentType {
   Application = "Application",
 }
 
-//for graphql
 registerEnumType(ContentType, {
     name: "ContentType",
 })
+
 
 export default ContentType

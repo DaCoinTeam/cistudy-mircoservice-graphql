@@ -1,4 +1,4 @@
-import { UserKind, UserRole } from "@database"
+import { UserKind, UserRole } from "@common"
 import { Field, ID, ObjectType } from "@nestjs/graphql"
 
 @ObjectType()

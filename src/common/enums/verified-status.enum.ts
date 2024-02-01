@@ -5,9 +5,9 @@ enum VerifiedStatus {
   Approved = "Approved",
   Rejected = "Rejected",
 }
-export default VerifiedStatus
 
-//for graphql
 registerEnumType(VerifiedStatus, {
     name: "VerifiedStatus",
 })
+
+export default VerifiedStatus

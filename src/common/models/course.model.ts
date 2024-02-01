@@ -1,5 +1,5 @@
 import { Field, Float, ID, ObjectType } from "@nestjs/graphql"
-import { VerifiedStatus } from "@database"
+import { VerifiedStatus } from "@common"
 import UserModel from "./user.model"
 
 @ObjectType()
@@ -11,7 +11,7 @@ export default class CourseModel {
       title: string
 
   @Field(() => String, { nullable: true })
-      thumbnailUrl: string
+      thumbnailId: string
 
   @Field(() => String)
       description: string
@@ -32,7 +32,7 @@ export default class CourseModel {
       isDeleted: boolean
 
   @Field(() => String, { nullable: true })
-      previewVideoUrl: string
+      previewVideoId: string
 
   @Field(() => String, { nullable: true })
       targets: string

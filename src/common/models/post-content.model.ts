@@ -1,4 +1,4 @@
-import { ContentType } from "@database"
+import { ContentType } from "@common"
 import { Field, ID, Int, ObjectType } from "@nestjs/graphql"
 
 @ObjectType()

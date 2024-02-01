@@ -5,9 +5,10 @@ enum UserKind {
   Google = "Google",
   Facebook = "Facebook",
 }
-export default UserKind
 
-//for graphql
 registerEnumType(UserKind, {
-	name: "UserKind",
+    name: "UserKind",
 })
+
+
+export default UserKind

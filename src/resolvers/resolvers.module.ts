@@ -3,6 +3,6 @@ import { CourseModule } from "./course"
 import { PostModule } from "./post"
 
 @Module({
-    providers: [CourseModule, PostModule],
+    imports: [CourseModule, PostModule],
 })
 export default class ResolversModule {}

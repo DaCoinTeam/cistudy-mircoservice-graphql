@@ -19,7 +19,7 @@ services:
       MYSQL_HOST: host.docker.internal
       MYSQL_PORT: 3306
     ports:
-      - 1804:1804
+      - 3003:3003
   
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to

@@ -5,7 +5,7 @@ import { generateSchema } from "@common"
 
 const bootstrap = async () => {
     const app = await NestFactory.create(AppModule)
-    await app.listen(1804 || appConfig().port)
+    await app.listen(3003 || appConfig().port)
 }
 
 generateSchema().then(() => bootstrap())

@@ -17,7 +17,7 @@ services:
       MYSQL_PASSWORD: 123456
       MYSQL_SCHEMA: cistudy
       MYSQL_HOST: host.docker.internal
-      MYSQL_PORT: 3306
+      MYSQL_PORT: 3307
     ports:
       - 3003:3003
   
